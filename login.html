@@ -8,6 +8,32 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
+    <script>
+        function validate() {
+            // Get the value of the input field
+            const number = document.getElementById("n1").value.trim();
+
+            // Check if the input field is empty
+            if (number === "" ) {
+                alert("Please enter an number ");
+                return false; // Prevents form submission
+            }
+            else if(number.length<10 || number.length>10){
+                alert("Enter the valid number ");
+                return false ;
+
+            }
+
+            else if(isNaN(number)){
+                alert("Enter the valid number ");
+                return false ;
+            }
+
+            // Success message (optional)
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
     <div class="container">
         <div class="logo">
            
@@ -16,11 +42,11 @@
     </div>
 
     <div class="main-section">
-        <div class="form">
+        <div class="form" >
             <h1>Sign in</h1>
-            <label for="">mobile number or Email</label> <br><br>
-            <input type="email" placeholder="Email or mobile no" required> <br><br>
-            <button type="button">Continue</button><br>
+            <label for="">Enter Number</label> <br><br>
+            <input type="text" placeholder="Number " id="n1" > <br><br>
+            <button type="button" onclick="validate()" >Continue</button><br>
             <p>by continue you agree to amazon <a href="">conditon of used</a>and <a href="">privacy notice</a></p><br>
             <select name="" id="">
                 <option value="text"><a href="">need help..!</a></option>
